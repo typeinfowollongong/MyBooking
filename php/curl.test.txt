@@ -1,0 +1,78 @@
+curl -X GET --header 'Accept: application/json' 'http://localhost:8088/mybooking/php/ViewCustomer.php'
+
+curl -X POST --header 'Accept: application/json' -d '{"username":"davidwalsh","password":"something"}' 'http://localhost:8088/mybooking/php/SubmitCustomer.php'
+
+
+'{"firstName":"","lastName":"","contactNumber":"","email":"","creditCardNumber":"","creditCardExpiryDate":"","creditCardCSV":"","carRego":"","address":""}'
+
+
+view customer
+=============================================================
+url: http://localhost:8088/mybooking/php/ViewCustomer.php
+method: GET
+
+
+
+Insert customer
+==============================================================
+url: http://localhost:8088/mybooking/php/SubmitCustomer.php
+method: POST
+json:
+{
+  "firstName": "TESTAA",
+  "lastName": "TESTBB",
+  "contactNumber": "0001001001",
+  "email": "abc@test.com",
+  "creditCardNumber": "123456789000",
+  "creditCardExpiryDate": "01/2020",
+  "creditCardCSV": "012",
+  "carRego": "ABCD99",
+  "address": "1 XXX street"
+}
+
+insert booking
+============================================================
+url: http://localhost:8088/mybooking/php/SubmitBooking.php
+method: POST
+json:
+{
+	"id":"",
+	"customer":{
+		  "id": "x00001",
+		  "firstName": "TESTAA",
+		  "lastName": "TESTBB",
+		  "contactNumber": "0001001001",
+		  "email": "abc@test.com",
+		  "creditCardNumber": "123456789000",
+		  "creditCardExpiryDate": "01/2020",
+		  "creditCardCSV": "012",
+		  "carRego": "ABCD99",
+		  "address": "1 XXX street"	
+	},
+	"bookingType":{
+		"id":"1",
+		"bookingTypeCode": "A",
+		"bookingTypeName": "External"
+	},
+	"roomNumber":"101",
+	"dateOfArrive":"16/04/2018",
+	"dateOfLeave":"18/04/2018",
+	"breakfast":"true",
+	"dinner":"true",
+	"numberOfAdults":"1",
+	"numberOfChildren":"",
+	"isConfirmed":"true",
+	"price": "120",
+	"refeem":"",
+	"branch":""	
+}
+
+
+
+search customer
+=====================================================
+url: http://localhost:8088/mybooking/php/ViewCustomer.php
+method: POST
+json:
+{{"search_criteria": {"contact_number":"111111"}}
+{}

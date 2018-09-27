@@ -1,0 +1,91 @@
+<h1 class="well">Customer Search Page</h1>
+<div class="col-lg-12 well">
+	<div class="row">
+	  <table class="table table-hover table-responsive table-striped">
+	    <thead>
+	      <tr>
+	      	<th>#</th>
+	        <th>Name</th>
+	        <th>Contact Number</th>
+	        <th>Email</th>
+			<th>Car Rego Number</th>
+	        <th></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="cus in value.customers ">
+	      	<td>{{ $index + 1 }}</td>
+	        <td>{{cus.firstName}} {{cus.lastName}}</td>
+	        <td>{{cus.contactNumber}}</td>
+	        <td>{{cus.email}}</td>
+	        <td>{{cus.carRego}}</td>
+	        <td>
+	        	<button ng-click="value.viewCustomer(cus)" data-toggle="modal" data-target="#modalCustomer">View</button>
+	        	<button ng-click="value.editCustomer(cus)" data-toggle="modal" data-target="#modalCustomer">Edit</button>
+	        </td>
+	      </tr>
+	    </tbody>
+	  </table>
+  	</div>
+  	
+  <!-- Modal Customer-->
+  <div class="modal fade" id="modalCustomer" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+        <div class="modal-body">
+          <!-- timesheet entry-->
+          <form role="form">
+              <div class="form-group">
+                <label for="txtFirstName">First Name</label>
+                <input type="text" class="form-control" id="txtFirstName" ng-model="value.customer.firstName" ng-disabled="value.disable" >
+              </div>
+              <div class="form-group">
+                <label for="txtLastName">Last Name</label>
+                <input type="text" class="form-control" id="txtLastName" ng-model="value.customer.lastName" ng-disabled="value.disable" >
+              </div>              
+              <div class="form-group">
+                <label for="txtContactNumber">Contact Number</label>
+                <input type="text" class="form-control" id="txtContactNumber" ng-model="value.customer.contactNumber" ng-disabled="value.disable" >
+              </div>
+              <div class="form-group">
+                <label for="txtEmail">Email</label>
+                <input type="text" class="form-control" id="txtEmail" ng-model="value.customer.email" ng-disabled="value.disable" >
+              </div>
+              <div class="form-group">
+                <label for="txtCreditCardNumber">Credit Card Number</label>
+                <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardNumber" ng-disabled="value.disable" >
+              </div>              
+              <div class="form-group">
+                <label for="txtCreditCardNumber">Credit Card Expiry Date</label>
+                <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardExpiryDate" ng-disabled="value.disable" >
+              </div>        
+              <div class="form-group">
+                <label for="txtCreditCardCSV">Credit Card CSV</label>
+                <input type="text" class="form-control" id="txtCreditCardCSV" ng-model="value.customer.creditCardCSV" ng-disabled="value.disable" >
+              </div>    
+              <div class="form-group">
+                <label for="txtCarRego">Car Rego.</label>
+                <input type="text" class="form-control" id="txtCarRego" ng-model="value.customer.carRego" ng-disabled="value.disable" >
+              </div>                 
+              <div class="form-group">
+                <label for="txtAddress">Address</label>
+                <input type="text" class="form-control" id="txtAddress" ng-model="value.customer.address" ng-disabled="value.disable" >
+              </div>              
+              <button name="submitCustomer" type="submit" ng-click="value.updateCustomer()" ng-hide="value.disable" class="btn btn-default btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Save and Close </button>
+          </form>
+          <!-- end of entry-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end if modal-->
+</div>

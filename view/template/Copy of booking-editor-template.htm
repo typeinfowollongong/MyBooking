@@ -1,0 +1,166 @@
+<div>
+  <button ng-click="value.createCustomer()" data-toggle="modal" data-target="#modalCustomer">Add New Customer</button>
+  <table class="table table-hover table-responsive">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Contact Number</th>
+        <th>Email</th>
+		<th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="cus in value.customers ">
+        <td>{{cus.firstName}}</td>
+        <td>{{cus.lastName}}</td>
+        <td>{{cus.contactNumber}}</td>
+        <td>{{cus.email}}</td>
+        <td>{{cus.address}}</td>
+        <td>
+        	<button ng-click="value.editCustomer(cus)" data-toggle="modal" data-target="#modalCustomer">Edit</button>
+        	<button ng-click="value.createBooking(cus)" data-toggle="modal" data-target="#modalBooking">Booking</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Modal Customer-->
+  <div class="modal fade" id="modalCustomer" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+        <div class="modal-body">
+          <!-- timesheet entry-->
+          <form role="form">
+              <div class="form-group">
+                <label for="txtFirstName">First Name</label>
+                <input type="text" class="form-control" id="txtFirstName" ng-model="value.customer.firstName">
+              </div>
+              <div class="form-group">
+                <label for="txtLastName">Last Name</label>
+                <input type="text" class="form-control" id="txtLastName" ng-model="value.customer.lastName">
+              </div>              
+              <div class="form-group">
+                <label for="txtContactNumber">Contact Number</label>
+                <input type="text" class="form-control" id="txtContactNumber" ng-model="value.customer.contactNumber">
+              </div>
+              <div class="form-group">
+                <label for="txtEmail">Email</label>
+                <input type="text" class="form-control" id="txtEmail" ng-model="value.customer.email">
+              </div>
+              <div class="form-group">
+                <label for="txtCreditCardNumber">Credit Card Number</label>
+                <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardNumber">
+              </div>              
+              <div class="form-group">
+                <label for="txtCreditCardNumber">Credit Card Expiry Date</label>
+                <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardExpiryDate">
+              </div>        
+              <div class="form-group">
+                <label for="txtCreditCardCSV">Credit Card CSV</label>
+                <input type="text" class="form-control" id="txtCreditCardCSV" ng-model="value.customer.creditCardCSV">
+              </div>    
+              <div class="form-group">
+                <label for="txtCarRego">Car Rego.</label>
+                <input type="text" class="form-control" id="txtCarRego" ng-model="value.customer.carRego">
+              </div>                 
+              <div class="form-group">
+                <label for="txtAddress">Address</label>
+                <input type="text" class="form-control" id="txtAddress" ng-model="value.customer.address">
+              </div>              
+              <button name="submitCustomer" type="submit" ng-click="value.saveOrUpdateCustomer()" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Save and Close </button>
+          </form>
+          <!-- end of entry-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end if modal-->
+  
+  <!-- Modal Booking-->
+  <div class="modal fade" id="modalBooking" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Guest Booking Details</h4>
+        </div>
+        <div class="modal-body">
+          <!-- Booking entry-->
+          <form role="form">
+              <div class="form-group">
+                <label for="txtFullName">Guest Name</label>
+                <input type="text" class="form-control" id="txtFullName" ng-model="value.booking.customer.firstName" disabled readonly>
+              </div>          
+              <div class="form-group">
+                <label for="txtBookingType">Type</label>
+                <input type="text" class="form-control" id="txtBookingType" ng-model="value.booking.bookingType" disabled readonly>
+              </div>
+              <div class="form-group">
+                <label for="txtroomNumber">Room Number</label>
+                <input type="text" class="form-control" id="txtroomNumber" ng-model="value.booking.roomNumber">
+              </div>              
+              <div class="form-group">
+                <label for="txtDateOfArrive">Date of Arrive</label>
+                <input type="text" class="form-control" id="txtDateOfArrive" name="txtDateOfArrive" placeholder="DD/MM/YYYY" ng-model="value.booking.dateOfArrive">
+              </div>
+              <div class="form-group">
+                <label for="txtDateOfLeave">Date of Leaving</label>
+                <input type="text" class="form-control" id="txtDateOfLeave" name="txtDateOfLeave" placeholder="DD/MM/YYYY" ng-model="value.booking.dateOfLeave">
+              </div>              
+              <div class="form-group">
+                <label for="txtNumberOfAdults">Number of Adults</label>
+                <input type="text" class="form-control" id="txtNumberOfAdults" ng-model="value.booking.numberOfAdults">
+              </div>
+              <div class="form-group">
+                <label for="txtNumberOfChildren">Number of Children</label>
+                <input type="text" class="form-control" id="txtNumberOfChildren" ng-model="value.booking.numberOfChildren">
+              </div>                          
+              <button ng-click="value.saveOrUpdateBooking()" class="btn btn-default btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Save and Close</button>
+          </form>
+          <!-- end of entry-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end if modal-->
+</div>
+
+<script>
+/*
+ * Date Picker
+ */
+$(document).ready(function(){
+	var arrive_date_input = $('input[name="txtDateOfArrive"]');
+	var leave_date_input = $('input[name="txtDateOfLeave"]');
+	var container = $('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+	
+	arrive_date_input.datepicker({
+		format : 'dd/mm/yyyy',
+		container : container,
+		todayHighlight : true,
+		autoclose : true,
+	});
+	
+	leave_date_input.datepicker({
+		format : 'dd/mm/yyyy',
+		container : container,
+		todayHighlight : true,
+		autoclose : true,
+	});
+})
+</script>

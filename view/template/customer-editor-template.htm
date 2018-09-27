@@ -1,0 +1,94 @@
+<h1 class="well">Customer Registration</h1>
+<div class="col-lg-12 well">
+	<div class="row">
+    <!-- registration entry-->
+    <form role="form">
+    	<!-- Customer entry -->
+    	<div class="col-sm-12">
+    		<div class="row">
+		        <div class="col-sm-6 form-group">
+		          <label for="txtFirstName">First Name</label>
+		          <input type="text" class="form-control" placeholder="Enter First Name Here.." id="txtFirstName" ng-model="value.customer.firstName">
+		        </div>
+		        <div class="col-sm-6 form-group">
+		          <label for="txtLastName">Last Name</label>
+		          <input type="text" class="form-control" id="txtLastName" placeholder="Enter Last Name Here.." ng-model="value.customer.lastName">
+		        </div>  
+	        </div> 
+         </div> 
+                 
+    	<div class="col-sm-12">
+    		<div class="row">         
+		        <div class="col-sm-6 form-group">
+		          <label for="txtContactNumber">Contact Number</label>
+		          <input type="text" class="form-control" id="txtContactNumber" placeholder="Enter Contact Number Here.." ng-model="value.customer.contactNumber">
+		        </div>
+		        <div class="col-sm-6 form-group">
+		          <label for="txtEmail">Email</label>
+		          <input type="text" class="form-control" id="txtEmail" placeholder="Enter Email Here.." ng-model="value.customer.email">
+		        </div>
+	        </div> 
+         </div> 
+         	
+        <div class="col-sm-12 form-group">
+          <label for="txtAddress">Address</label>
+          <textarea class="form-control" id="txtAddress" placeholder="Enter Address Here.." rows="3" ng-model="value.customer.address"></textarea>
+        </div>  
+           
+    	<div class="col-sm-12">
+    		<div class="row">               	        
+		        <div class="col-sm-6 form-group">
+		          <label for="txtCreditCardNumber">Credit Card Number</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardNumber">
+		        </div>              
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardNumber">Credit Card Expiry Date</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.customer.creditCardExpiryDate">
+		        </div>        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardCSV">Credit Card CSV</label>
+		          <input type="text" class="form-control" id="txtCreditCardCSV" ng-model="value.customer.creditCardCSV">
+		        </div>  
+	        </div> 
+         </div> 
+         		          
+        <div class="col-sm-12 form-group">
+        	<div class="row">  
+        		<div class="col-sm-6 form-group">
+		          <label for="txtCarRego">Car Rego.</label>
+		          <input type="text" class="form-control" id="txtCarRego" placeholder="Enter Your Car Rego Number Here.." ng-model="value.customer.carRego">
+		        </div>
+	        </div> 
+        </div>   
+                 
+        <!-- 
+    	<div class="col-sm-12">
+    		<div class="row">        
+		        <div class="col-sm-6 form-group">
+		          <label for="txtBranch">Branch</label>
+		          <input type="text" class="form-control" id="txtBranch" ng-model="value.customer.txtBranch">
+		        </div>                 
+		        <div class="col-sm-6 form-group">
+		          <label for="txtRefeem">Refeem</label>
+		          <input type="text" class="form-control" id="txtRefeem" ng-model="value.customer.txtRefeem">
+		        </div>             
+ 	        </div> 
+         </div>     
+        <div class="col-sm-12 form-group">    		                             
+        	<button ng-click="value.createCustomer()" class="btn btn-default btn-success"> Reset </button> 
+        	<button ng-click="value.saveCustomer()" class="btn btn-default btn-success"> Save </button>
+        </div>--> 
+    </form>
+    <!-- end of entry-->  
+    </div>    
+</div>
+
+<div class="col-lg-12 well">
+	<div class="row">
+    <!-- registration entry-->
+    	<div class="col-sm-12">
+        	<button ng-click="value.createCustomer()" class="btn btn-default btn-success"> Reset </button> 
+        	<button ng-click="value.saveCustomer()" class="btn btn-default btn-success"> Save </button>
+        </div>     
+    </div>
+</div>

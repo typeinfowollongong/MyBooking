@@ -1,0 +1,13 @@
+<h1 class="well">Future Room</h1>
+<div class="col-lg-12 well">
+<div class="row scrollbar">
+	<div ng-repeat="f in value.floors">
+		<div class="well col-sm-2 portfolio-item" style="height:100px; width:90px" 
+			ng-style="{'background-color':value.selectColour(f)};"
+			ng-click="value.changebgColor(f)">
+			<div ng-style="{'background-color':value.getColour(f)}"><h4>{{f.roomNumber}}</h4></div>
+			<div><p>{{f.roomType}}</p></div>
+		</div>		
+	</div>
+</div>
+</div>

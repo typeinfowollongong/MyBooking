@@ -1,0 +1,140 @@
+<h1 class="well">Check Out </h1>
+<div class="col-lg-12 well">
+	<div class="row">
+    <!-- Check out entry-->
+    <form role="form">
+    	<!-- Customer entry -->
+    	
+    	<div class="col-sm-12">   	
+    		<div class="row">                      
+		        <div class="col-sm-4 form-group">
+		          <label for="txtRoomNumber">Room Number</label>
+		          <div class="input-group">
+		          <input type="text" class="form-control" id="txtRoomNumber" ng-model="value.checkin.roomNumber">
+		          <span class="input-group-btn"><button type="button" ng-click="value.searchCheckinByRoom(value.checkin.roomNumber)" 
+			          class="btn btn-primary">Search</button></span>	
+		          </div>
+		        </div>   
+		        
+		        <div class="col-sm-4 form-group">
+		          <label for="txtDateOfCheckout">Date of Checkout</label>
+		          <div class="input-group">
+		          <input type="text" class="form-control" id="txtDateOfCheckout" name="txtDateOfCheckout" placeholder="DD/MM/YYYY" ng-model="value.checkin.dateOfCheckout" disabled>
+		          <span class="input-group-btn"><button type="button" ng-click="value.checkout()" 
+			          class="btn btn-primary">Check Out</button></span>	
+		          </div>		          
+		        </div>  		        		                          
+ 	        </div> 
+         </div> 
+    	
+    	<div class="col-sm-12">
+    		<div class="row">
+    		
+		        <div class="col-sm-3 form-group">
+		          <label for="txtFirstName">First Name</label>
+		          <input type="text" class="form-control" placeholder="Enter First Name Here.." id="txtFirstName" ng-model="value.checkin.customer.firstName" disabled>		          
+		        </div>
+		        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtLastName">Last Name</label>
+		          <input type="text" class="form-control" id="txtLastName" placeholder="Enter Last Name Here.." ng-model="value.checkin.customer.lastName" disabled>
+		        </div>  
+		        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtContactNumber">Contact Number</label>
+		          <input type="text" class="form-control" id="txtContactNumber" placeholder="Enter Contact Number Here.." ng-model="value.checkin.customer.contactNumber" disabled>	
+		        </div>
+		        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtEmail">Email</label>
+		          <input type="text" class="form-control" id="txtEmail" placeholder="Enter Email Here.." ng-model="value.checkin.customer.email" disabled>	
+		        </div>		        
+	        </div> 
+         </div> 
+                        	
+        <div class="col-sm-12 form-group">
+          <label for="txtAddress">Address</label>
+          <textarea class="form-control" id="txtAddress" placeholder="Enter Address Here.." rows="3" ng-model="value.checkin.customer.address" disabled></textarea>
+        </div>  
+ 
+    	<div class="col-sm-12">
+    		<div class="row">               	        
+		        <div class="col-sm-6 form-group">
+		          <label for="txtCreditCardNumber">Credit Card Number</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.checkin.creditCardNumber" disabled>
+		        </div>              
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardNumber">Expiry Date</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.checkin.creditCardExpiryDate" disabled>
+		        </div>        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardCVV">CVV</label>
+		          <input type="text" class="form-control" id="txtCreditCardCVV" ng-model="value.checkin.creditCardCVV" disabled>
+		        </div>  
+		        
+	        </div> 
+         </div> 
+         		          
+        <div class="col-sm-12 form-group">
+        	<div class="row">  
+        		<div class="col-sm-6 form-group">
+		          <label for="txtCarRego">Car Rego.</label>
+		          <input type="text" class="form-control" id="txtCarRego" placeholder="Enter Your Car Rego Number Here.." ng-model="value.checkin.carRego" disabled>
+		        </div>
+	        </div> 
+        </div>            
+
+    	<div class="col-sm-12">
+    		<div class="row">        
+    			<div class="col-sm-4 form-group">
+		          <label for="txtBookingType">Guest Type</label>
+				  <select class="form-control" id="txtBookingType" name="txtBookingType" ng-model="value.selectedBookingType" ng-options="b.bookingTypeName for b in value.bookingTypes" disabled>
+				  </select>		       
+		        </div>                          
+		        <div class="col-sm-4 form-group">
+		          <label for="txtDateOfCheckin">Date of Checkin</label>
+		          <input type="text" class="form-control" id="txtDateOfCheckin" name="txtDateOfCheckin" placeholder="DD/MM/YYYY" ng-model="value.checkin.dateOfCheckin" disabled>
+		        </div>  
+		        <div class="col-sm-4 form-group">
+		          <label for="txtFullPrice">Price</label>
+		          <input type="text" class="form-control" id="txtFullPrice" ng-model="value.checkin.price"  disabled>
+		        </div>				         
+ 	        </div> 
+        </div>         
+                                      
+    	<div class="col-sm-12">
+    		<div class="row">          
+		        <div class="col-sm-4 form-group">
+		          <label for="txtMeal">Meal Required</label>
+		          <div class="input-group form-control">
+				      <label class="checkbox-inline"><input id="txtBreakfase" type="checkbox" ng-model="value.checkin.breakfast" disabled>Breakfase</label>
+					  <label class="checkbox-inline"><input id="txtDinner" type="checkbox" ng-model="value.checkin.dinner" disabled>Dinner</label>
+				  </div>
+		        </div>           		                  
+		        <div class="col-sm-4 form-group">
+		          <label for="txtNumberOfAdults">Number of Adults</label>
+		          <input type="text" class="form-control" id="txtNumberOfAdults" ng-model="value.checkin.numberOfAdults" disabled>
+		        </div>
+		        <div class="col-sm-4 form-group">
+		          <label for="txtNumberOfChildren">Number of Children</label>
+		          <input type="text" class="form-control" id="txtNumberOfChildren" ng-model="value.checkin.numberOfChildren" disabled>
+		        </div>     
+ 	        </div> 
+         </div>
+         
+    	<div class="col-sm-12">
+    		<div class="row">           		  
+		        <div class="col-sm-4 form-group">
+		          <label for="txtBranch">Branch</label>
+		          <input type="text" class="form-control" id="txtBranch" ng-model="value.checkin.branch" disabled>
+		        </div>                 
+		        <div class="col-sm-4 form-group">
+		          <label for="txtRefeem">Refeem</label>
+		          <input type="text" class="form-control" id="txtRefeem" ng-model="value.checkin.refeem" disabled>
+		        </div>             
+ 	        </div> 
+         </div>                   
+    </form>
+    <!-- end of entry-->  
+    </div> 
+</div>

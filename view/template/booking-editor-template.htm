@@ -1,0 +1,289 @@
+<h1 class="well">Booking Registration</h1>
+<div class="col-lg-12 well">
+	<div class="row">
+	
+    <!-- registration entry-->
+    <form role="form">
+    	<!-- Customer entry -->
+    	<div class="col-sm-12">
+    		<div class="row">
+		        <div class="col-sm-6 form-group">
+		          <label for="txtFirstName">First Name</label>
+		          <div class="input-group">
+			          <input type="text" class="form-control" placeholder="Enter First Name Here.." id="txtFirstName" ng-model="value.customer.firstName">
+			          <span class="input-group-btn"><button type="button" ng-click="value.searchCustomerByFirstName(value.customer.firstName)" 
+			          class="btn btn-primary" data-toggle="modal" data-target="#modalCustomer">Search</button></span>        
+		          </div>
+		        </div>
+		        <div class="col-sm-6 form-group">
+		          <label for="txtLastName">Last Name</label>
+		          <div class="input-group">
+			          <input type="text" class="form-control" id="txtLastName" placeholder="Enter Last Name Here.." ng-model="value.customer.lastName">
+			          <span class="input-group-btn"><button type="button" ng-click="value.searchCustomerByFirstName(value.customer.lastName)" 
+			          class="btn btn-primary" data-toggle="modal" data-target="#modalCustomer">Search</button></span>	          
+		          </div>
+		        </div>  
+	        </div> 
+         </div> 
+                 
+    	<div class="col-sm-12">
+    		<div class="row">         
+		        <div class="col-sm-6 form-group">
+		          <label for="txtContactNumber">Contact Number</label>
+		          <div class="input-group">
+			          <input type="text" class="form-control" id="txtContactNumber" placeholder="Enter Contact Number Here.." ng-model="value.customer.contactNumber">
+			          <span class="input-group-btn"><button type="button" ng-click="value.searchCustomerByContactNumber(value.customer.contactNumber)" 
+			          class="btn btn-primary" data-toggle="modal" data-target="#modalCustomer">Search</button></span>			          
+		          </div>
+		        </div>
+		        <div class="col-sm-6 form-group">
+		          <label for="txtEmail">Email</label>
+		          <div class="input-group">
+			          <input type="text" class="form-control" id="txtEmail" placeholder="Enter Email Here.." ng-model="value.customer.email">
+			          <span class="input-group-btn"><button type="button" ng-click="value.searchCustomerByEmail(value.customer.email)" 
+			          class="btn btn-primary" data-toggle="modal" data-target="#modalCustomer">Search</button></span>			          
+		          </div>
+		        </div>
+	        </div> 
+         </div> 
+         	
+        <div class="col-sm-12 form-group">
+          <label for="txtAddress">Address</label>
+          <textarea class="form-control" id="txtAddress" placeholder="Enter Address Here.." rows="3" ng-model="value.customer.address" disabled></textarea>
+        </div>  
+     </form>
+     </div>
+     <br>
+     <div class="row"> 
+     <form role="form">   
+     
+    	<div class="col-sm-12">
+    		<div class="row">        
+    			<div class="col-sm-4 form-group">
+		          <label for="txtBookingType">Guest Type</label>
+				  <select class="form-control" id="txtBookingType" name="txtBookingType" placeholder="Please Select type..." ng-model="value.selectedBookingType" ng-options="b.bookingTypeName for b in value.bookingTypes">
+				  </select>		       
+		        </div>                          
+		        <div class="col-sm-4 form-group">
+		          <label for="txtDateOfArrive">Date of Arrive</label>
+		          <input type="text" class="form-control" id="txtDateOfArrive" name="txtDateOfArrive" placeholder="DD/MM/YYYY" ng-model="value.booking.dateOfArrive">
+		        </div>
+		        <div class="col-sm-4 form-group">
+		          <label for="txtDateOfLeave">Date of Leaving</label>
+		          <input type="text" class="form-control" id="txtDateOfLeave" name="txtDateOfLeave" placeholder="DD/MM/YYYY" ng-model="value.booking.dateOfLeave">
+		        </div>    
+ 	        </div> 
+        </div>      
+             
+    	<div class="col-sm-12">   	
+    		<div class="row">                      
+		        <div class="col-sm-4 form-group">
+		          <label for="txtroomNumber">Room Number</label>
+		          <div class="input-group">
+		          <input type="text" class="form-control" id="txtroomNumber" ng-model="value.booking.roomNumber">
+		          <span class="input-group-btn"><button type="button" ng-click="value.searchAvailableRooms()" 
+			          class="btn btn-primary" data-toggle="modal" data-target="#modalCustomer">Search</button></span>	
+		          </div>
+		        </div>    
+		        <div class="col-sm-4 form-group">
+		          <label for="txtFullPrice">Orinal Price</label>
+		          <input type="text" class="form-control" id="txtFullPrice" ng-model="value.room.price"  disabled>
+		        </div>		
+		        <div class="col-sm-4 form-group">
+		          <label for="txtPrice">Real Price</label>
+		          <input type="text" class="form-control" id="txtPrice" ng-model="value.booking.price">
+		        </div>			        		                          
+ 	        </div> 
+         </div>       
+         
+    	<div class="col-sm-12">
+    		<div class="row">               	        
+		        <div class="col-sm-6 form-group">
+		          <label for="txtCreditCardNumber">Credit Card Number</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.booking.creditCardNumber">
+		        </div>              
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardNumber">Expiry Date</label>
+		          <input type="text" class="form-control" id="txtCreditCardNumber" ng-model="value.booking.creditCardExpiryDate">
+		        </div>        
+		        <div class="col-sm-3 form-group">
+		          <label for="txtCreditCardCVV">CVV</label>
+		          <input type="text" class="form-control" id="txtCreditCardCVV" ng-model="value.booking.creditCardCVV" >
+		        </div>  
+		        
+	        </div> 
+         </div> 
+         		          
+        <div class="col-sm-12 form-group">
+        	<div class="row">  
+        		<div class="col-sm-6 form-group">
+		          <label for="txtCarRego">Car Rego.</label>
+		          <input type="text" class="form-control" id="txtCarRego" placeholder="Enter Your Car Rego Number Here.." ng-model="value.booking.carRego">
+		        </div>
+	        </div> 
+        </div>                      
+         
+    	<div class="col-sm-12">
+    		<div class="row">          
+		        <div class="col-sm-4 form-group">
+		          <label for="txtMeal">Meal Required</label>
+		          <div class="input-group form-control">
+				      <label class="checkbox-inline"><input id="txtBreakfase" type="checkbox" ng-model="value.booking.breakfast">Breakfase</label>
+					  <label class="checkbox-inline"><input id="txtDinner" type="checkbox" ng-model="value.booking.dinner">Dinner</label>
+				  </div>
+		        </div>           		                  
+		        <div class="col-sm-4 form-group">
+		          <label for="txtNumberOfAdults">Number of Adults</label>
+		          <input type="text" class="form-control" id="txtNumberOfAdults" ng-model="value.booking.numberOfAdults">
+		        </div>
+		        <div class="col-sm-4 form-group">
+		          <label for="txtNumberOfChildren">Number of Children</label>
+		          <input type="text" class="form-control" id="txtNumberOfChildren" ng-model="value.booking.numberOfChildren">
+		        </div>     
+ 	        </div> 
+         </div>
+         
+    	<div class="col-sm-12">
+    		<div class="row">      
+		        <div class="col-sm-4 form-group">
+		          <label for="txtConfirmed">Sending Email</label>
+		          <label class="form-control"><input id="txtConfirmed" type="checkbox" ng-model="value.booking.isConfirmed"> Confirmed</label>
+		        </div>      		  
+		        <div class="col-sm-4 form-group">
+		          <label for="txtBranch">Branch</label>
+		          <input type="text" class="form-control" id="txtBranch" ng-model="value.booking.txtBranch">
+		        </div>                 
+		        <div class="col-sm-4 form-group">
+		          <label for="txtRefeem">Refeem</label>
+		          <input type="text" class="form-control" id="txtRefeem" ng-model="value.booking.txtRefeem">
+		        </div>             
+ 	        </div> 
+         </div>           
+           
+        <div class="col-sm-12 form-group">    		                             
+        	<button ng-click="value.resetBooking()" class="btn btn-default btn-success"> Reset </button> 
+        	<button ng-click="value.saveBooking()" class="btn btn-default btn-success"> Save </button>
+        </div>
+    </form>
+    <!-- end of entry-->  
+    </div>    
+</div>
+
+  <!-- Modal Customer Search-->
+  <div class="modal fade" id="modalCustomer" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+        <div class="modal-body">
+          <!-- customer list -->
+		  <table class="table table-hover table-responsive">
+		    <thead>
+		      <tr>
+		        <th>First Name</th>
+		        <th>Last Name</th>
+		        <th>Contact Number</th>
+		        <th>Email</th>
+				<th>Car Rego.</th>
+		        <th></th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr ng-repeat="c in value.search.customers ">
+		        <td>{{c.firstName}}</td>
+		        <td>{{c.lastName}}</td>
+		        <td>{{c.contactNumber}}</td>
+		        <td>{{c.email}}</td>
+		        <td>{{c.carRego}}</td>
+		        <td>
+		        	<button ng-click="value.selectCustomer(c)" data-toggle="modal" data-target="#modalCustomer">Select</button>
+		        </td>
+		      </tr>
+		    </tbody>
+		  </table>
+          <!-- end of entry-->
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end if modal-->
+  
+  <!-- Modal room Search-->
+  <div class="modal fade" id="modalCustomer" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+        <div class="modal-body">
+          <!-- customer list -->
+		  <table class="table table-hover table-responsive">
+		    <thead>
+		      <tr>
+		        <th>First Name</th>
+		        <th>Last Name</th>
+		        <th>Contact Number</th>
+		        <th>Email</th>
+				<th>Car Rego.</th>
+		        <th></th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr ng-repeat="c in value.search.customers ">
+		        <td>{{c.firstName}}</td>
+		        <td>{{c.lastName}}</td>
+		        <td>{{c.contactNumber}}</td>
+		        <td>{{c.email}}</td>
+		        <td>{{c.carRego}}</td>
+		        <td>
+		        	<button ng-click="value.selectCustomer(c)" data-toggle="modal" data-target="#modalCustomer">Select</button>
+		        </td>
+		      </tr>
+		    </tbody>
+		  </table>
+          <!-- end of entry-->
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end if modal-->
+  
+ <script>
+/*
+ * Date Picker
+ */
+$(document).ready(function(){
+	var arrive_date_input = $('input[name="txtDateOfArrive"]');
+	var leave_date_input = $('input[name="txtDateOfLeave"]');
+	var container = $('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+	
+	arrive_date_input.datepicker({
+		format : 'dd/mm/yyyy',
+		container : container,
+		todayHighlight : true,
+		autoclose : true,
+	});
+	
+	leave_date_input.datepicker({
+		format : 'dd/mm/yyyy',
+		container : container,
+		todayHighlight : true,
+		autoclose : true,
+	});
+})
+</script>
